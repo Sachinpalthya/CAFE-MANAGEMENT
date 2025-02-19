@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe Management</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <h1>Buddies cafe</h1>
+        <h2>since 2025</h2>
+    </header>
+    <nav>
+        <ul>
+            <li><button onclick="showSection('stock')">View Stock</button></li>
+            <li><button onclick="showSection('billing')">Generate Bill</button></li>
+            <li><button onclick="showSection('users')">Users</button></li>
+            <li><button onclick="showSection('inward')">Inward Entry</button></li>
+            <li><button onclick="showSection('reports')">Monthly Reports</button></li>
+        </ul>
+    </nav>
+
+    <section id="stock" class="section hidden">
+        <h2>View Stock</h2>
+        <table>
+            <tr><th>Item</th><th>Price (₹)</th><th>Quantity</th></tr>
+            <tr><td>Tea</td><td>12</td><td><input type="number" value="0"></td></tr>
+            <tr><td>Coffee</td><td>15</td><td><input type="number" value="0"></td></tr>
+            <tr><td>Boost</td><td>20</td><td><input type="number" value="0"></td></tr>
+            <tr><td>Sandwich</td><td>25</td><td><input type="number" value="0"></td></tr>
+            <tr><td>Horlicks</td><td>20</td><td><input type="number" value="0"></td></tr>
+            <tr><td>Black Tea</td><td>10</td><td><input type="number" value="0"></td></tr>
+            <tr><td>Belam Tea</td><td>15</td><td><input type="number" value="0"></td></tr>
+        </table>
+    </section>
+
+    <section id="billing" class="section hidden">
+        <h2>Generate Bill</h2>
+        <table id="billTable">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="billBody"></tbody>
+        </table>
+        <button onclick="addItem()">Add Item</button>
+        <button onclick="printBill()">Print Bill</button>
+    </section>
+
+    <section id="users" class="section hidden">
+        <h2>Users (Owners)</h2>
+        <ul>
+            <li>Sachin Palthya - Mobile: 9553284523</li>
+            <li>CH. Saikiran - Mobile: 9573800661</li>
+        </ul>
+    </section>
+
+    <section id="reports" class="section hidden">
+        <h2>Monthly Reports</h2>
+        <p>Total Monthly Items Received: 500</p>
+        <p>Total Monthly Expenditure: ₹10,000</p>
+        <p>Monthly Income: ₹15,000</p>
+        <button onclick="downloadReport()">Download PDF</button>
+    </section>
+
+    <footer>
+        <p>For Franchise Contact:9573800661,9553284523 </p>
+    </footer>
+
+</body>
+</html>
